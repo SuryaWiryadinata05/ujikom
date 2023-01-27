@@ -36,7 +36,7 @@
                                     {{-- @include('layouts/_flash') --}}
                                     <form action="{{ route('jurusan.store') }}" method="post">
                                         @csrf
-                                        <div class="mb-3">
+                                        <div class="mb-3 ">
                                             <label class="form-label">Jurusan</label>
                                             <input type="text"
                                                 class="form-control  @error('jurusan') is-invalid @enderror" name="jurusan">
@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="mb-5 pr-5 pl-5">
                                             <div class="d-grid gap-2">
-                                                <button class="btn btn-info" type="submit">Simpan</button>
+                                                <button class="btn btn-secondary" type="submit">Simpan</button>
                                             </div>
                                     </form>
                                 </div>
@@ -59,41 +59,23 @@
 
         <div class="row justify-content-center">
 
-            <div class="col-md-10">
+            <div class="col-md-10 shadow-2">
                 @include('layouts/_flash')
                 <div class="" style="background-color:rgb(221, 221, 221)) ;">
 
-                    <div class="card-header mb-2 mt-2 " style="background-color: rgb(229, 227, 227)">
+                    <div class="card-header  mt-2 " style="background-color: rgb(229, 227, 227)">
                         <div class="color text-light">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col align-self-start">
-                                    </div>
-                                    <div class="col align-self-center">
-                                    </div>
-                                    <div class="col align-self-start">
-                                    </div>
-                                    <div class="col align-self-center">
-                                    </div>
-                                    <div class="col align-self-center">
-                                    </div>
-                                    <div class="col align-self-center">
-                                    </div>
-                                    <div class="col align-self-center">
-                                    </div>
+                                    
                                     <div class="col align-self-end">
                                         <a class="btn btn-sm btn-dark mb-2 mt-2" style="float:right;" data-bs-toggle="modal"
-                                            href="#exampleModalToggle" role="button ">
+                                            href="#exampleModalToggle" role="button " style="float: right">
                                             <div class="color text-light">
 
 
-                                                Tambah
-                                                <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                        fill="currentColor" class="bi bi-plus-square-fill"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
-                                                    </svg></span>
+                                                Tambah Data
+                                               
 
 
                                             </div>
@@ -104,9 +86,9 @@
                         </div>
                     </div>
 
-                    <div class="card-body bg-light ">
+                    <div class="card-body  pt-2 pl-2 pr-2"style="background-color:white;">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover data-table" id="dataTable"
+                            <table class="table table-bordered table-striped table-hover " id="datatables"
                                 cellspacing="0",width="100%">
                                 <thead>
                                     <tr>

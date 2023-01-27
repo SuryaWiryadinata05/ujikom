@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Jurusan;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class JurusanController extends Controller
 {
@@ -22,7 +25,9 @@ class JurusanController extends Controller
         $jurusan = Jurusan::all();
         return view('jurusan.index', compact('jurusan'));
     }
-
+public function json(){
+    return Datatables::of(Jurusan::limit(10))->make(true);
+}
     /**
      * Show the form for creating a new resource.
      *
@@ -73,7 +78,9 @@ class JurusanController extends Controller
     public function edit($id)
     {
         $jurusan = Jurusan::findOrFail($id);
+        
         return view('jurusan.edit', compact('jurusan'));
+
     }
 
     /**
@@ -91,6 +98,7 @@ class JurusanController extends Controller
 
         $jurusan = Jurusan::findOrFail($id);
         $jurusan->jurusan = $request->jurusan;
+
         $jurusan->save();
         return redirect()->route('jurusan.index')
             ->with('success', 'Data berhasil dibuat!');
