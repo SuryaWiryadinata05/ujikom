@@ -1,5 +1,5 @@
-@if ($message = Session::get('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+{{-- @if ($message = Session::get('success'))
+    <div class="Alert::success('Success Title', 'Success Message');" role="alert">
         <strong>{{ $message }}</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -31,4 +31,4 @@
         <strong>Please check the form below for errors</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-@endif
+@endif --}}

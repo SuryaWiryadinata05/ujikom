@@ -54,7 +54,7 @@ public function json(){
         $jurusan->jurusan = $request->jurusan;
         $jurusan->save();
         return redirect()->route('jurusan.index')
-            ->with('success', 'Data berhasil dibuat!');
+            ->withSuccess('Task Created Successfully!');
     }
 
     /**
@@ -101,7 +101,7 @@ public function json(){
 
         $jurusan->save();
         return redirect()->route('jurusan.index')
-            ->with('success', 'Data berhasil dibuat!');
+            ->withSuccess('Data Has Been Update');
     }
 
     /**
@@ -115,6 +115,6 @@ public function json(){
         $jurusan = Jurusan::findOrFail($id);
         $jurusan->delete();
         return redirect()->route('jurusan.index')
-            ->with('success', 'Data berhasil dihapus!');
+            ->withSuccess('Data Has Been Deleted ');
     }
 }

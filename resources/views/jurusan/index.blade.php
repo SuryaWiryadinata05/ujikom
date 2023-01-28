@@ -33,7 +33,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-md-7">
-                                    {{-- @include('layouts/_flash') --}}
+                                    @include('sweetalert::alert')
                                     <form action="{{ route('jurusan.store') }}" method="post">
                                         @csrf
                                         <div class="mb-3 ">
@@ -60,14 +60,14 @@
         <div class="row justify-content-center">
 
             <div class="col-md-10 shadow-2">
-                @include('layouts/_flash')
+                @include('sweetalert::alert')
                 <div class="" style="background-color:rgb(221, 221, 221)) ;">
 
                     <div class="card-header  mt-2 " style="background-color: rgb(229, 227, 227)">
                         <div class="color text-light">
                             <div class="container">
                                 <div class="row">
-                                    
+
                                     <div class="col align-self-end">
                                         <a class="btn btn-sm btn-dark mb-2 mt-2" style="float:right;" data-bs-toggle="modal"
                                             href="#exampleModalToggle" role="button " style="float: right">
@@ -75,7 +75,7 @@
 
 
                                                 Tambah Data
-                                               
+
 
 
                                             </div>
