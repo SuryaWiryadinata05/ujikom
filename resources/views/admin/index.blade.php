@@ -22,7 +22,7 @@
     </div>
 </div>
 @endsection --}}
-@extends('layouts.admin')
+@extends('layouts.admin2')
 
 @section('content')
 <style>
@@ -33,7 +33,7 @@
         margin-left:25%;
     }
 </style>
-<div class="container">
+<div class="container mt-5">
 <div class="col-lg-8 mb-4 order-0">
     <div class="card">
       <div class="d-flex align-items-end row">

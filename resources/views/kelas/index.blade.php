@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin2')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
@@ -18,22 +18,102 @@
 <body>
     
 
-<div class="container">
-    <div class="card text-sm-center" style="margin-left: 56rem; margin-right:9rem;">
-        <a href="{{ route('kelas.create') }}" class="btn btn-sm btn-outline-success" style="float: right">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 19 17">
-                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-              </svg> Data
-        </a>
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">Tambah Data Jurusan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7">
+                            @include('sweetalert::alert')
+                             <form action="{{ route('kelas.store') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="mb-3">
+                                <label class="form-label">Pilih Data Jurusan</label>
+                                <select name="id_jurusan" class="form-control @error('id_jurusan') is-invalid @enderror"
+                                    id="">
+                                    @foreach ($kelas as $data)
+                                        <option value="{{ $data->id }}">{{ $data->jurusan }}</option>
+                                    @endforeach
+                                </select>
+                                @error('id_jurusan')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Kelas</label>
+                                <input type="text" class="form-control  @error('kelas') is-invalid @enderror"
+                                    name="kelas">
+                                @error('kelas')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-info" type="submit">Simpan</button>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
+<div class="row justify-content-center">
+
+    <div class="col-md-9  mt-4">
+        @include('sweetalert::alert')
+        <div class="" style="background-color:rgb(221, 221, 221)) ;">
+
+            <div class="card-header  mt-2 " style="background-color: rgb(229, 227, 227)">
+                <div class="color text-light">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-align-self-center" ">
+                                <h5 class="color text-dark">Data Kelas</h5>
+                            </div>
+                         
+                            <div class="col align-self-end">
+                                <a class="btn btn-sm btn-dark" style="float:right;" data-bs-toggle="modal"
+                                    href="#exampleModalToggle" role="button " style="float: right">
+                                    <div class="color text-light">
+
+
+                                        Tambah Data
+
+
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="row justify-content-center">
         <div class="col-md-9">
-            <div class="card elevation-5 shadow p-2" style="background-color:rgb(221, 221, 221)) ;">
-                <div class="card-header pb-3" style="background-color: rgb(143, 188, 240)">Data Kelas
-                </div>
+            <div class="card" >
+                
                 <div class="card-body bg-light shadow p-4">
                     <div class="table-responsive">
-                        <table class="table" id="dataTable">
+                        <table class="table table-bordered table-striped table-hover" id="datatables">
                             <thead>
                                 <th>No</th>
                                 <th>Jurusan</th>

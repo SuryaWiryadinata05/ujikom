@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin2')
 
 @section('content')
     <!DOCTYPE html>
@@ -59,7 +59,7 @@
 
         <div class="row justify-content-center">
 
-            <div class="col-md-10 shadow-2">
+            <div class="col-md-10 shadow-2 mt-5">
                 @include('sweetalert::alert')
                 <div class="" style="background-color:rgb(221, 221, 221)) ;">
 

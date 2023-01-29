@@ -115,7 +115,7 @@
    
   </div>
  <div class="info text-sm-center">
-      <a href="#" class="d-block text-light">{{ Auth::user()->name }}</a>
+      <a href="#" class="d-block text-light">{{ Auth::user()->apa }}</a>
   </div>
    
  

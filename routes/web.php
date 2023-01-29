@@ -20,7 +20,7 @@ use App\Http\Controllers\AbsenSiswaController;
 */
 
 Route::get('/', function () {
-    return view('layouts.admin');
+    return view('welcome');
 });
 Route::get('/contact', function () {
     return view('contact');

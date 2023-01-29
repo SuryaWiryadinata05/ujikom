@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin2')
 
 @section('content')
     <!DOCTYPE html>
@@ -20,13 +20,13 @@
     <body>
 
 
-        <div class="container">
+        <div class="container mt-4" >
             <div class="row justify-content-center">
                 <div class="col-md-7">
                     @include('sweetalert::alert')
 
                     <div class="card">
-                        <div class="card-header " style="background-color:  rgb(143, 188, 240);">
+                        <div class="card-header " style="background-color:  rgb(221, 221, 221))">
                             Edit Data Jurusan
                         </div>
                         <div class="card-body bg-light shadow p-4">
@@ -44,10 +44,10 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <div class="d-grid gap-2">
-                                        <button class="btn btn-info" type="submit">Simpan</button>
-                                    </div>
+                                <div class="mb-1 mt-3">
+                                   
+                                        <button class="btn btn-secondary" type="submit">Simpan</button>
+                                   
                                 </div>
                             </form>
                         </div>
